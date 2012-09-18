@@ -58,7 +58,10 @@ describe "StaticPages" do
     it "should have the title 'About Us'" do
        visit '/staticpages/about'
        page.should have_selector('title', :text => "#{base_title}")
+<<<<<<< HEAD
     end
+=======
+>>>>>>> filling-in-layout
 
     it "should not have a custom page title" do
         visit '/staticpages/about'
@@ -79,6 +82,7 @@ describe "StaticPages" do
     it "should have the title 'Contact'" do
        visit '/staticpages/contact'
        page.should have_selector('title', :text => "#{base_title}")
+<<<<<<< HEAD
 
     end  
 
@@ -86,6 +90,8 @@ describe "StaticPages" do
         visit '/staticpages/contact'
         page.should_not have_selector('title', :text => '| Contact')
     end
+=======
+>>>>>>> filling-in-layout
 
  
   end
