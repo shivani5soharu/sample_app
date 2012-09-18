@@ -1,28 +1,27 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+
   let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
   describe "Home page" do
 
     it "should have the content 'Sample App'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      #get static_pages_index_path
       visit '/staticpages/home'
       page.should have_content('Sample App')
-      #response.status.should be(200)
     end
     
     it "should have the title 'Home'" do
        visit '/staticpages/home'
        page.should have_selector('title', :text => "#{base_title} | Home")
-
     end 
+
   end   
 
- 
+  #-------------------------
 
   describe "Help page" do
+
     it "should have content 'Help'" do
       visit '/staticpages/help'
       page.should have_content('Help')
@@ -33,11 +32,13 @@ describe "StaticPages" do
        page.should have_selector('title', :text => "#{base_title} | Help")
 
     end  
+
   end 
 
-  
+  #-------------------------
 
   describe "About page" do
+
     it "should have content 'About Us'" do
       visit '/staticpages/about' 
       page.should have_content('About Us')
@@ -46,6 +47,22 @@ describe "StaticPages" do
     it "should have the title 'About Us'" do
        visit '/staticpages/about'
        page.should have_selector('title', :text => "#{base_title} | About Us")
+
+    end   
+  end
+
+  #-------------------------
+
+  describe "Contact page" do
+
+    it "should have content 'Contact'" do
+      visit '/staticpages/contact' 
+      page.should have_content('Contact')
+    end
+   
+    it "should have the title 'Contact'" do
+       visit '/staticpages/contact'
+       page.should have_selector('title', :text => "#{base_title} | Contact")
 
     end   
   end
