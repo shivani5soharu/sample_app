@@ -7,17 +7,17 @@ describe "StaticPages" do
   describe "Home page" do
 
     it "should have the content 'Sample App'" do
-      visit '/staticpages/home'
+      visit root_path
       page.should have_content('Sample App')
     end
     
-    it "should have the title 'Home'" do
-       visit '/staticpages/home'
+    it "should have the base title" do
+       visit root_path
        page.should have_selector('title', :text => "#{base_title}")
     end 
 
     it "should not have a custom page title" do
-        visit '/staticpages/home'
+        visit root_path
         page.should_not have_selector('title', :text => '| Home')
     end
 
@@ -28,18 +28,18 @@ describe "StaticPages" do
   describe "Help page" do
 
     it "should have content 'Help'" do
-      visit '/staticpages/help'
+      visit help_path
       page.should have_content('Help')
     end
     
-    it "should have the title 'Help'" do
-       visit '/staticpages/help'
+    it "should have the base title" do
+       visit help_path
        page.should have_selector('title', :text => "#{base_title}")
 
     end  
 
     it "should not have a custom page title" do
-        visit '/staticpages/help'
+        visit help_path
         page.should_not have_selector('title', :text => '| Help')
     end
 
@@ -51,19 +51,19 @@ describe "StaticPages" do
   describe "About page" do
 
     it "should have content 'About Us'" do
-      visit '/staticpages/about' 
+      visit about_path 
       page.should have_content('About Us')
     end
    
-    it "should have the title 'About Us'" do
-       visit '/staticpages/about'
+    it "should have the base title'" do
+       visit about_path
        page.should have_selector('title', :text => "#{base_title}")
 
     end
 
 
     it "should not have a custom page title" do
-        visit '/staticpages/about'
+        visit about_path
         page.should_not have_selector('title', :text => '| About Us')
     end
    
@@ -74,19 +74,19 @@ describe "StaticPages" do
   describe "Contact page" do
 
     it "should have content 'Contact'" do
-      visit '/staticpages/contact' 
+      visit contact_path 
       page.should have_content('Contact')
     end
    
-    it "should have the title 'Contact'" do
-       visit '/staticpages/contact'
+    it "should have the base title" do
+       visit contact_path
        page.should have_selector('title', :text => "#{base_title}")
 
 
     end  
 
     it "should not have a custom page title" do
-        visit '/staticpages/contact'
+        visit contact_path
         page.should_not have_selector('title', :text => '| Contact')
     end
 
